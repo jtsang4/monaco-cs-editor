@@ -1092,7 +1092,7 @@ vscode-json-languageservice@^3.2.0:
     vscode-nls "^4.0.0"
     vscode-uri "^1.0.6"
 
-vscode-jsonrpc@^3.6.2:
+vscode-jsonrpc@^3.6.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-3.6.2.tgz#3b5eef691159a15556ecc500e9a8a0dd143470c8"
   integrity sha512-T24Jb5V48e4VgYliUXMnZ379ItbrXgOimweKaJshD84z+8q7ZOZjJan0MeDe+Ugb+uqERDVV8SBmemaGMSMugA==
@@ -1133,12 +1133,12 @@ vscode-uri@^1.0.5, vscode-uri@^1.0.6:
   resolved "https://registry.yarnpkg.com/vscode-uri/-/vscode-uri-1.0.6.tgz#6b8f141b0bbc44ad7b07e94f82f168ac7608ad4d"
   integrity sha512-sLI2L0uGov3wKVb9EB+vIQBl9tVP90nqRvxSoJ35vI3NjxE8jfsE5DSOhWgSunHSZmKS4OCi2jrtfxK7uyp2ww==
 
-vscode-ws-jsonrpc@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/vscode-ws-jsonrpc/-/vscode-ws-jsonrpc-0.0.3.tgz#090e2d324010c5bd2b4a94f21188431aa13eecf2"
-  integrity sha512-qf7uCmBwMuDXdjMERbpdyJe2296TteggeG6J/f6X2r2KVIJUDwxqlrqaW7Ru1OZsA2OgtNPFV1ig9gz8cnchsw==
+vscode-ws-jsonrpc@=0.0.2-1:
+  version "0.0.2-1"
+  resolved "https://registry.yarnpkg.com/vscode-ws-jsonrpc/-/vscode-ws-jsonrpc-0.0.2-1.tgz#7478781f98f08f07990248f20853392473905813"
+  integrity sha512-wey3lHZ1Q7dxAk8ybL+MTY2T1FfcaOyZhFE2Wa4cnfUAEQFr7knhVR8IcO+jgMWmHb+fEELOnzEDzms1bZPJYg==
   dependencies:
-    vscode-jsonrpc "^4.0.0"
+    vscode-jsonrpc "^3.6.0"
 
 webpack-sources@^1.3.0:
   version "1.3.0"

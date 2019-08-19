@@ -24,8 +24,9 @@ function launch(socket) {
     // 3. 处理服务端连接
     var socketConnection = server.createConnection(reader, writer, function () { return socket.dispose(); });
     // 4. 转发连接到 LSPS(language-server-protocol server) 上
-    var connectionForwarder = server.createServerProcess('python', 'pyls');
+    var connectionForwarder = server.createServerProcess('python3', 'pyls');
     server.forward(socketConnection, connectionForwarder, function (message) {
+        console.log('message:', message);
         if (rpc.isRequestMessage(message)) {
             if (message.method === lsp.InitializeRequest.type.method) {
                 var initializeParams = message.params;
@@ -42,9 +43,12 @@ process.on('uncaughtException', function (err) {
     }
 });
 // 创建 HTTP 服务器
+var PORT = '3001';
 var app = express_1.default();
-var HTTPServer = app.listen('3000');
-// 创建 websocket
+var HTTPServer = app.listen(PORT, function () {
+    console.log("LSP server is listening at port: " + PORT);
+});
+// 创建 websocket server
 var wss = new ws.Server({
     noServer: true,
     perMessageDeflate: false,
@@ -52,7 +56,8 @@ var wss = new ws.Server({
 // 在 HTTP 服务器进行 'upgrade' 的时候利用 websocket 启用处理 rpc
 HTTPServer.on('upgrade', function (request, socket, head) {
     var pathname = request.url ? url.parse(request.url).pathname : undefined;
-    if (pathname === 'lsp/python') {
+    console.log('A request coming:', pathname, '\n');
+    if (pathname === '/lsp/python') {
         wss.handleUpgrade(request, socket, head, function (websocket) {
             // rpc 配置
             var websocketRPC = {

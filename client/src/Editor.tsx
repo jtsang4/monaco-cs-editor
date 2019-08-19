@@ -1,5 +1,6 @@
 import React from 'react';
-import * as monaco from 'monaco-editor';
+import { editor as MonacoEditor } from 'monaco-editor/esm/vs/editor/editor.api';
+import createEditor from './common/editor';
 import styles from './Editor.module.css';
 
 interface Props {
@@ -7,13 +8,19 @@ interface Props {
 }
 
 class Editor extends React.Component<Props> {
+  editor: MonacoEditor.IStandaloneCodeEditor = undefined!;
   editorRef = React.createRef<HTMLDivElement>();
 
   componentDidMount(): void {
-    monaco.editor.create(this.editorRef.current as HTMLDivElement, {
-      value: `print('hello, world')`,
-      language: 'python',
-    });
+    if (this.editorRef.current) {
+      this.editor = createEditor(this.editorRef.current, `print('hello, world')`);
+    }
+  }
+
+  componentWillUnmount(): void {
+    if (this.editor) {
+      this.editor.dispose();
+    }
   }
 
   render(): React.ReactNode {

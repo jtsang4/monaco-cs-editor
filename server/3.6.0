@@ -1,0 +1,20 @@
+yarn add v1.15.2
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved 0 new dependencies.
+$ npm run clean && npm run build
+
+> server@1.0.0 clean /Users/wtzeng/Documents/practice/monaco-cs-editor/server
+> rimraf lib
+
+
+> server@1.0.0 build /Users/wtzeng/Documents/practice/monaco-cs-editor/server
+> npm run compile
+
+
+> server@1.0.0 compile /Users/wtzeng/Documents/practice/monaco-cs-editor/server
+> tsc
+
+Done in 3.26s.
