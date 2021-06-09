@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "express": "^4.17.0",
-    "normalize-url": "^4.3.0",
+    "normalize-url": "^4.5.1",
     "reconnecting-websocket": "^4.1.10",
     "request-light": "^0.2.4",
     "vscode-json-languageservice": "^3.2.0",
