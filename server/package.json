@@ -12,7 +12,7 @@
     "clean": "rimraf lib"
   },
   "dependencies": {
-    "express": "^4.17.0",
+    "express": "^4.17.3",
     "normalize-url": "^4.3.0",
     "reconnecting-websocket": "^4.1.10",
     "request-light": "^0.2.4",
